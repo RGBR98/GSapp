@@ -1,0 +1,12 @@
+name: GameStop
+title: GameStop
+username:
+account: rgbr98
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3417056
+bundleId: 4262297
+url: https://rgbr98.shinyapps.io/GameStop/
+when: 1614097056.55614
+asMultiple: FALSE
+asStatic: FALSE

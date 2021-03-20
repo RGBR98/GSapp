@@ -1,0 +1,34 @@
+
+
+.skin-yellow .main-header .logo {
+    background-color: #150b06;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+
+
+.skin-yellow .main-header .logo:hover{
+  background-color: #150b06;
+  
+}
+
+
+.skin-yellow .main-header .navbar {
+    background-color: #150b06;
+}
+
+
+.skin-yellow .main-header .navbar .sidebar-toggle {
+    color: #FD0000;
+}
+
+.skin-yellow .main-header .navbar .sidebar-toggle:hover {
+    color: white;
+}
+
+
+.box.box-solid.box-info>.box-header {
+    color: #fff;
+    background: #ebd116;
+    background-color: #070276;
+}
