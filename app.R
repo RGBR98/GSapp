@@ -22,12 +22,14 @@ KB66793 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3F
 KB74943 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsysparm_article%3DKB74943"
 #AD
 KB67360 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Dcac7617d0f64a24012c8384be1050e8f%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Dpassword%20reset%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
+#DLC KB
+KB67355  <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Db8b1edf90f64a24012c8384be1050e34%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Ddlc%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 
 Orders <- "https://source.compucom.com/products/"
 Airwatch <- "https://gamestopadmin.awmdm.com/AirWatch/Login?ReturnUrl=%2FAirWatch%2F"
 Citrix <- "https://myaccess.gamestop.com/logon/LogonPoint/tmindex.html"
 trackit <- "https://trackit.compucom.com/gamestop/HelpDesk"
-
+SNOW <- "https://iaas.service-now.com/nav_to.do?uri=%2Fincident.do%3Fsys_id%3D-1%26sysparm_stack%3Dincident_list.do"
 
 
 gamestop <- tags$img(src = "GSLL.png",
@@ -2338,6 +2340,11 @@ ui <- dashboardPage(skin = "yellow",
                                                                                               tabPanel("ECOM portal",br(),
                                                                                                        fluidPage(img(src = "citrix6.png", 
                                                                                                                      width = 600, align ="left")),br(),
+                                                                                                       "We use this application for",tags$a(href = KB67355, style = "color:green", " KB67355"),br(),
+                                                                                                       "Here it is explained how to get a DLC code for a game that was not printed correctly, remember that 
+                                                                                                       you have to make an employee verification before giving the code",br(),
+                                                                                                       br(),
+                                                                                                       
                                                                                                        
                                                                                               )
                                                                                               
@@ -2345,13 +2352,133 @@ ui <- dashboardPage(skin = "yellow",
                                                                                   )
                                                                                   
                                                                                   
-                                                                         ))
+                                                                         ),
+                                                                         tabPanel("Citrix Desktop",br(),
+                                                                                  tabsetPanel(type = "tabs",
+                                                                                              tabPanel("What is it?",br(),
+                                                                         "It is basically a remote desktop inside the GameStop enviroment, so we are able to interact with othe GS HW",br(),
+                                                                         "To access to the citrix desktop you have to click on the top button that says desktop and select “Compucom Store Support Desktop”",br(),
+                                                                         br(),
+                                                                         fluidPage(img(src = "citrix7.png", 
+                                                                                       width = 600, align ="left")),br(),
+                                                                         br(),
+                                                                         "Access with your Gamestop credentials v_....",br(),
+                                                                         "The remote desktop takes around 2 minutes to setup, after the setup you should see the following",br(),
+                                                                         br(),
+                                                                         fluidPage(img(src = "CITDESK1.png", 
+                                                                                       width = 800, align ="left")),br(),
+                                                                         br(),
+                                                                         "We can remote to registers with TRC remote, remote to hardware with Google chrome and a lot more with our citrix tools"
+                                                                         ),
+                                                                                              tabPanel("Citrix desktop tools details",
+                                                                                                       "On the tools - Shortcut you will have access to the following",br(),
+                                                                                                       br(),
+                                                                                                       fluidPage(img(src = "CITDESK2.png", 
+                                                                                                                     width = 800, align ="left")),br(),
+                                                                                                       br(),
+                                                                                                       h3("POSPasswordGenerator"),br(),
+                                                                                                       "All GS registers have something called restricted utilities, this program asks for a password
+                                                                                                       you can get the passcode from this citrix app",br(),
+                                                                                                       "You have to right click on the file and open it as an administrator and you will see the following",br(),
+                                                                                                       br(),
+                                                                                                       fluidPage(img(src = "CITDESK3.png", 
+                                                                                                                     width = 600, align ="left")),br(),
+                                                                                                       br(),
+                                                                                  
+                                                                                                       )
+                                                                                            )
+                                                                                )
+                                                                         )
                                                              
                                                              
                                                     ),
                                                     
                                                     
-                                                    tabPanel("Service now")
+                                                    tabPanel("Service now",br(),
+                                                             "Here You can learn how to configure your SNOW tickets, create useful filters, and update HW orders",br(),
+                                                             tags$a(href = SNOW, style = "color:green", "SNOW"),"<- Access to the SNOW log in page",br(),
+                                                             br(),
+                                                             tabsetPanel(type = "tabs",
+                                                                         tabPanel("Configuration",br(),
+                                                                                  h3("Step 1"),br(),
+                                                                                  "This image is the first step you have to perform before saving the ticket for 
+                                                                                  the first time",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW1.png", 
+                                                                                                width = 1100, align ="left")),br(),
+                                                                                  "After that, more options are going to be available that you have to fill out, the Configuration item, CI 
+                                                                                  KB attachment, ETC",br(),
+                                                                                  br(),
+                                                                                  h3("Step 2"),br(),
+                                                                                  fluidPage(img(src = "SNOW3.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  h3("Step 3"),br(),
+                                                                                  fluidPage(img(src = "SNOW2.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  h3("Step 4 (KB attachment saves your progress)"),br(),
+                                                                                  fluidPage(img(src = "SNOW4.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  h3("Write your work notes on NOTES and if you have a chat copy all the chat on WORK")),
+                                                                         
+                                                                         
+                                                                         tabPanel("Resolution of an INC",br(),
+                                                                                  "To resolve your INC you just have to modify the following aspects of the ticket",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW5.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW6.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  h3("Note: For the resolve first contact you have to resolve the ticket in the first 4 hours")),
+                                                                         
+                                                                         
+                                                                         tabPanel("Escalation groups",br(),
+                                                                                  "We have the following groups, we do not escalate, only the leads are able to escalate incidents",br(),
+                                                                                  strong(h3("STSC GV")),br(),
+                                                                                  "This is our level 2 group, they are directly associated with GameStop, when we follow the KB all the
+                                                                                  way and the issue persists, we ask on our chat group for our issue to be escalated",br(),
+                                                                                  strong(h3("STSC Additional HW request")),br(),
+                                                                                  "There are stores that have a limit of registers that can be ordered for them, this limit is located 
+                                                                                  on the i icon next to the location space",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW7.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  strong(h3("STSC Pending HW orders")),br(),
+                                                                                  "Here we add the items that we have ordered and we are waiting for them to arrive",br(),
+                                                                                  "We have to update the tickets that are on this group daily with the update of fedex so we know when the HW is arriving",br(),
+                                                                                  "For example",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW8.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  strong(h3("STSC Telecom")),br(),
+                                                                                  "We assign the tickets with telecomunication issues here to have the updated amount of stores with telephone issues on our eye",br(),
+                                                                                  "This is just for the phones and it is not an actal escalation group, so we have to assing it to us and continue with the TS",
+                                                                                  ),
+                                                                         tabPanel("Configuration item and Support function",br(),
+                                                                                  "For the configuration item we have to input the store number, and we have to input the corresponding 
+                                                                                  item we are supporting on the support function",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW9.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  "For the Ice machines it changes, it is as it follows",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW10.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  "We also have the following for password resets",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SNOW11.png", 
+                                                                                                width = 900, align ="left")),br(),
+                                                                                  br(),
+                                                                                  )
+                                                                         
+                                                                         )
+                                                             )
                                         )
                                 )
                                 
