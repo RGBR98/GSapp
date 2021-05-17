@@ -24,6 +24,9 @@ KB74943 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3F
 KB67360 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Dcac7617d0f64a24012c8384be1050e8f%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Dpassword%20reset%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 #DLC KB
 KB67355  <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Db8b1edf90f64a24012c8384be1050e34%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Ddlc%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
+#Polling KB
+KB100220 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Deebe15efdba8e3c456347dbb8c96195b%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3DNot%20polled%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
+
 
 Orders <- "https://source.compucom.com/products/"
 Airwatch <- "https://gamestopadmin.awmdm.com/AirWatch/Login?ReturnUrl=%2FAirWatch%2F"
@@ -525,7 +528,56 @@ ui <- dashboardPage(skin = "yellow",
                                                                                         height = 150, width = 200, align ="left")),br(),
                                                                           tabsetPanel(type = "tabs",
                                                                                       tabPanel("Not pinging"),
+                                                                                      tabPanel("USB not printing",br(),
+                                                                                               strong(tags$a(href = "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Dc4ef9e1d0f9d7a0047c64d8ce1050e3e%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3DKB75361%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
+                                                                                                             ,style = "Color:Green", "KB75361"), "<- Source"),br(),
+                                                                                               br(),
+                                                                                               "The printer uses USB A to USB B",br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "USBB.png", 
+                                                                                                             height = 150, width = 200, align ="left")),br(),
+                                                                                               "The printer has to be connected on the back of the register (the motherboard)",br(),
+                                                                                               "Once connected you have to access to RU - utilities - printers folder and you should see something like this:",br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "m452dw1.png",
+                                                                                                             width = 700, align ="left")),br(),
+                                                                                               br(),
+                                                                                               "As you can see there is a driver for the M452DW printer installed on the register, 
+                                                                                           this driver is installed automatically when you plug the USB on the back of the register to the printer,
+                                                                                           if it does not try connecting it on another port",br(),
+                                                                                               br(),
+                                                                                               "Now click on the driver and go to see what's printing, you should get the following image:",br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "M452DW2.png",
+                                                                                                             width = 400, align ="left")),br(),
+                                                                                               br(),
+                                                                                               "Access to properties and the following will appear:",br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "M452DW3.png",
+                                                                                                             width = 400, align ="left")),br(),
+                                                                                               br(),
+                                                                                               "Go to sharing and tick the sharing option so the driver of the printer can be shared to the other registers",br(),
+                                                                                               br(),
+                                                                                               "Go to the other registers and access to the printers folder, the following should appear", br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "M452DW4.png",
+                                                                                                             width = 400, align ="left")),br(),
+                                                                                               br(),
+                                                                                               "Go to add a printer and select *the printer that I want is not listed*, the following should open:",br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "M452DW7.png",
+                                                                                                             width = 400, align ="left")),br(),
+                                                                                               br(),
+                                                                                               "Select browse and select the computer that has the printer connected and the shared driver",br(),
+                                                                                               br(),
+                                                                                               fluidPage(img(src = "M452DW9.png",
+                                                                                                             width = 400, align ="left")),br(),
+                                                                                               br(),
+                                                                                               "Select the driver and install it, click next on all pop ups and continue after that send a test print and you are done.",br(),
+                                                                                               "Once that is done just repeat the steps on the other auxiliary registers and the printer has been installed."
+                                                                                      ),
                                                                                       tabPanel("Not printing")
+                                                                                      
                                                                                       
                                                                           ),
                                                                           
@@ -703,8 +755,50 @@ ui <- dashboardPage(skin = "yellow",
                                             height = 45, width = 50, align ="right"),
                                         h1("Polling"),
                                         tabsetPanel(type = "tab",
-                                                    tabPanel("What is Polling?"),
-                                                    tabPanel("R1 not polled"),
+                                                    tabPanel("What is Polling?",br(),
+                                                             "GS has a central corporate, this corporate sends a lot of information to all stores, for example",br(),
+                                                             "-Price changes",br(),
+                                                             "-New SKU's for games or items",br(),
+                                                             "-Changes made to the register for them to work better",br(),
+                                                             br(),
+                                                             "With a poll you can pull all this information",br(),
+                                                             "But the stores also have to send their information to corporate, for example",br(),
+                                                             "-Total sales",br(),
+                                                             "-Employee performance",br(),
+                                                             "-Total amount of money they have at the end of the day",br(),
+                                                             br(),
+                                                             "And a lot more, a poll also sends this information to corporate",br(),
+                                                             "With something that we call a force poll, we can make a store poll at anytime if we need to, this is explained on the following tabs"
+                                                                                       
+                                                             
+                                                             ),
+                                                    tabPanel("R1 not polled",br(),
+                                                             strong(tags$a(href = "KB100220", style = "color:green", "KB100220")), "<- This KB is the one for a not polled register in case this tab does not work",br(),
+                                                             br(),
+                                                             "The polling application is quite simple, it just checks if there is an extra file on the C:\\poll\\send folder",br(),
+                                                             "If there is an extra file on that folder the program will appear as not polled and if there are no extra files, it will say polled",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "POLL1.png", 
+                                                                           width = "600", align ="left")),br(),
+                                                             br(),
+                                                             "There are 3 reasons because this file is not being sent",br(),
+                                                             "- There was a bug in the middle of the poll and it was not sent",br(),
+                                                             "- There is a database corruption and the EXPORT.EXE program does not work correctly",br(),
+                                                             "- There is a file on the send folder that did not sent with everything else, this may happen because a file corruption",br(),
+                                                             br(),
+                                                             "to poll a register correctly you can follow this steps",br(),
+                                                             h3("Step 1"),br(),
+                                                             "Close the governor in the processes tab (Win 7) or just close it (Win 10), you should have a black background with the property of GS in the background",br(),
+                                                             h3("Step 2"),br(),
+                                                             "Open the file explorer with Restricted utilities and access to the C:\\poll\\send folder",br(),
+                                                             "Here you will see either a window full of folders or a window with folders and files, if you see files you can erase them all",br(),
+                                                             strong("YOU CAN JUST ERASE FILES, DO NOT ERASE FOLDERS"),br(),
+                                                             h3("Step 3"),br(),
+                                                             "Force poll the register with RU"
+                                                                                                                        
+                                                             
+                                                            
+                                                             ),
                                                     tabPanel("Promotions not showing"))
                                 ),
                                 
@@ -1506,7 +1600,7 @@ ui <- dashboardPage(skin = "yellow",
                                                                          tabPanel("Peripheral checkup",br(),
                                                                                   tabsetPanel(type = "tab",
                                                                                               tabPanel("General checkup",br(),
-                                                                                                       "This check up is performed with teh employee of the store, tell the tech that you need the employee so he can put him on the line.",br(),
+                                                                                                       "This check up is performed with the employee of the store, tell the tech that you need the employee so he can put him on the line.",br(),
                                                                                                        br(),
                                                                                                        "1.- After the restart R1 should boot all the way to the POS (Back office), you should have the following open.",br(),
                                                                                                        br(),
@@ -1991,6 +2085,9 @@ ui <- dashboardPage(skin = "yellow",
                                 
                                 
                                 tabItem(tabName = "point_of_sale",
+                                        img(
+                                          src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
+                                          height = 45, width = 50, align ="right"),
                                         h1("Point of sale (POS)"),
                                         tabsetPanel(type = "tab",
                                                     tabPanel("Re tech"),
@@ -2025,22 +2122,165 @@ ui <- dashboardPage(skin = "yellow",
                                 
                                 
                                 tabItem(tabName = "store_network",
+                                        img(
+                                          src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
+                                          height = 45, width = 50, align ="right"),
                                         h1("Store network"),
+                                        tabsetPanel(type = "tabs",
+                                                    tabPanel("Store arrangement",br(),
+                                                             "There are 3 placements for the network hardware in a store:",br(),
+                                                             "Under the cashwrap",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "NETWORK1.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             "In the back room",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "NETWORK2.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             "On the ceiling",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "NETWORK3.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             
+                                                             "Sometimes the user are not aware of the placement so you can guide them if you ask them to
+                                                             look in any of this 3 places"
+                                                             
+                                                             ),
+                                                    tabPanel("Hardware IP's",br(),
+                                                             "If you open Store Tech Support, you can see that the first 9 digits on an IP address are the same,
+                                                             throughout all the store information, and the las 4 digits are different. This las 3 digits are the ones
+                                                             that define the actual hardware of the store.",br(),
+                                                             "This is a list of hardware with their respective IP:",br(),
+                                                             br(),
+                                                             "Register 1, 2, 3.... IP: Ends with 11, 12, 13.....",br(),
+                                                             "For example R4's IP is XXX.XXX.XXX.14",br(),
+                                                             br(),
+                                                             "Network printer - Ends with .034 or .035 (Only for a second printer)",br(),
+                                                             br(),
+                                                             "Router - Ends with .200",br(),
+                                                             br(),
+                                                             "Switch - Ends with .224",br(),
+                                                             br(),
+                                                             "And so on, we can observe this under store tech support, the name of the hardware is next to the IP"
+                                                             
+                                                             ),
+                                                    
+                                                    tabPanel("Router",br(),
+                                                             "FortiGate60D, the router is a small box with the fortinet brand on top",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "ROUTER1.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "ROUTER2.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "sts2.png", #Router image
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             "The router is in charge of routing the Internet service provider connection through the store hardware, it is like a switch 
+                                                             but with the router you can set and edit IP addresses",br(),
+                                                             
+                                                             ),
+                                                    
+                                                    tabPanel("Switch",br(),
+                                                             "The switch is in charge of routing the instructions that the router sends to the pertinent hardware",br(),
+                                                             "It has 24 ports, it can be white or black and it is connected to the router from port 23 & 24 to 6 & 7 on the router",br(),
+                                                             "The following are the connections for the switch",br(),
+                                                             
+                                                             
+                                                             ),
+                                                    tabPanel("ISP Modem",br(),
+                                                             "There is 1 main ISP for the stores called comcast but there are more ISP´s for the stores.",br(),
+                                                             "We have comcast and their modem is normally called Comcast business",br(),
+                                                             "We have Tailwind",br(),
+                                                             "We have Motorola",br(),
+                                                             br(),
+                                                             "This is the modem that provides internet connection to the entire store, it goes connected to the Router
+                                                             port WAN 1",br(),
+                                                             "The only TS we can do for the modem is to power cycle it",br(),
+                                                             "It takes around 5 minutes after the restart for the internet to come back, if it does not you have to try other TS"
+                                                             
+                                                             ),
+                                                    
+                                                    tabPanel("WAP",br(),
+                                                             "Cisco 3502i or FortiAP 221e, there is 1 Wireless access point on the stores and it can be either one of those",br(),
+                                                             br(),
+                                                             tabsetPanel(type = "tabs",
+                                                                         tabPanel("Cisco 3502i",br(),
+                                                                                  "The Cisco WAP is connected in the switch port #10, so naturally it is close to the switch.",br(),
+                                                                                  br(),
+                                                                                  "The best way to find the WAP is following the cable from the switch to it.",br(),
+                                                                                  br(),
+                                                                                  "It has Power over ethernet (POE), and the only cable connected to it is the ethernet cable.",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "WAP1.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "WAP2.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  
+                                                                                  ),
+                                                                         
+                                                                         tabPanel("FortiAP 221e",br(),
+                                                                                  "This WAP is located on the ceiling, in the middle of the sales floor.",br(),
+                                                                                  br(),
+                                                                                  "There is not much we can TS with it because all the cabling is through the ceiling, 
+                                                                                  and it is performed by a technitian, but we can check if it is connected on the switch.",br(),
+                                                                                  br(),
+                                                                                  "The WAP is connected on the switch port #10 and it has Power over ethernet (POE), so there is only 
+                                                                                  one ethernet cable connected to it.",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "WAP3.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "WAP4.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  )
+                                                                         
+                                                                         )
+                                                             
+                                                             
+                                                             ),
+                                                    
+                                                    tabPanel("Forti Extender",
+                                                             
+                                                             ),
+                                                    
+                                                    tabPanel("L1 triage",
+                                                             "This is the basic troubleshoot we perform when a store has any kind of network issues.",br(),
+                                                             "To access to this list of stes to follow we have to select the option “Quick code value” "
+                                                             
+                                                             )
+                                                    
+                                                    
+                                                    
+                                                    )
+                                        
+                                        
+                                        
+                                        
                                 ),
                                 
                                 
                                 tabItem(tabName = "our_apps",
+                                        img(
+                                          src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
+                                          height = 45, width = 50, align ="right"),
                                         h1("Our apps"),
                                         tabsetPanel(type = "tab",
                                                     tabPanel("Orders",br(),
                                                              "To make or search a hardware order you must enter to the following link ->",
-                                                             tags$a(href = Orders, "CC Orders"),br(),
+                                                             tags$a(href = Orders,style = "color:green", "CC Orders"),br(),
                                                              br(),
                                                              tabsetPanel(type = "tab",
                                                                          tabPanel("How to make an order",br(),
-                                                                                  "To make a hardware order you have to emter to the following link ->",
-                                                                                  tags$a(href = Orders, "CC Orders"),br(),
-                                                                                  br(),
                                                                                   "The orders portal will open and you will have to access with your CompuCom credentials",br(),
                                                                                   "On the products tab you can order the hardware that you need (The images example is an M452DW",br(),
                                                                                   br(),
@@ -2146,7 +2386,7 @@ ui <- dashboardPage(skin = "yellow",
                                                                          )
                                                              )),
                                                     tabPanel("Airwatch",br(),
-                                                             tags$a(href = Airwatch, "Airwatch"),
+                                                             tags$a(href = Airwatch,style = "color:green", "Airwatch"),
                                                              "<- Click the hiperlink to go to the portal",br(),
                                                              br(),
                                                              tabsetPanel(type = "tabs",
@@ -2241,7 +2481,7 @@ ui <- dashboardPage(skin = "yellow",
                                                                                                        "I put this two aplications toguether because it is mandatory to make an employee verification in order to make a password reset",br(),
                                                                                                        br(),
                                                                                                        tags$a(href = KB67360, style = "color:green", "KB67360"), "<- Use this KB so you can
-                                                                                       do a password reset for a user here you need to use teh AD and employee verification tools"
+                                                                                       do a password reset for a user here you need to use the AD and employee verification tools"
                                                                                                        
                                                                                                        
                                                                                                        
@@ -2370,7 +2610,7 @@ ui <- dashboardPage(skin = "yellow",
                                                                          br(),
                                                                          "We can remote to registers with TRC remote, remote to hardware with Google chrome and a lot more with our citrix tools"
                                                                          ),
-                                                                                              tabPanel("Citrix desktop tools details",
+                                                                                              tabPanel("Citrix desktop tools details",br(),
                                                                                                        "On the tools - Shortcut you will have access to the following",br(),
                                                                                                        br(),
                                                                                                        fluidPage(img(src = "CITDESK2.png", 
@@ -2384,8 +2624,47 @@ ui <- dashboardPage(skin = "yellow",
                                                                                                        fluidPage(img(src = "CITDESK3.png", 
                                                                                                                      width = 600, align ="left")),br(),
                                                                                                        br(),
+                                                                                                       h3("Google chrome"),br(),
+                                                                                                       "With google chrome you can access to the actual hardware GUI of the store, this can be the router,
+                                                                                                       the switch, the printer & the VOIP",br(),
+                                                                                                       "You have to access via the browser on top and input https://10.xxx.xxx.xxx <enter>",br(),
+                                                                                                       "You should see the following (If you do not check if the HW is pinging on store tech support)",br(),
+                                                                                                       br(),
+                                                                                                       fluidPage(img(src = "CITDESK5.png", 
+                                                                                                                     width = 600, align ="left")),br(),
+                                                                                                       br(),
+                                                                                                       "After you proceed with the IP you have to input your GS credentials",br(),
+                                                                                                       "You can have the following screens",br(),
+                                                                                                       br(),
+                                                                                                       fluidPage(img(src = "CITDESK6.png", 
+                                                                                                                     width = 600, align ="left")),br(),
+                                                                                                       br(),
+                                                                                                       
                                                                                   
-                                                                                                       )
+                                                                                                       ),
+                                                                         tabPanel("Remote to the register files",br(),
+                                                                                  "You can remote to the register files with the citrix desktop",br(),
+                                                                                  h3("Step 1"),br(),
+                                                                                  "Open a file explorer",br(),
+                                                                                  h3("Step 2"),br(),
+                                                                                  "Click on the finder and input the store number as USA0XXXX-#, # being the register number",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "CITDESK7.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  h3("Step 3"),br(),
+                                                                                  "Access with the following credentials - possvrsvc - PW: p0$$vr$vc",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "CITDESK8.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  h3("Step 4"),br(),
+                                                                                  "You are now in the C drive and able to access to the register files!",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "CITDESK9.png", 
+                                                                                                width = 600, align ="left")),br(),
+                                                                                  br(),
+                                                                                  )
                                                                                             )
                                                                                 )
                                                                          )
