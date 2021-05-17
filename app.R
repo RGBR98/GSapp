@@ -26,7 +26,8 @@ KB67360 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3F
 KB67355  <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Db8b1edf90f64a24012c8384be1050e34%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Ddlc%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 #Polling KB
 KB100220 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Deebe15efdba8e3c456347dbb8c96195b%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3DNot%20polled%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
-
+#L1 triage
+KB67070 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3D5bb260e32bd86a003a6c35a119da15b0%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Dl1%20triage%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3DGameStop%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 
 Orders <- "https://source.compucom.com/products/"
 Airwatch <- "https://gamestopadmin.awmdm.com/AirWatch/Login?ReturnUrl=%2FAirWatch%2F"
@@ -84,9 +85,10 @@ ui <- dashboardPage(skin = "yellow",
                             menuItem("Webpages", tabName = "webpages", icon = icon("globe")),
                             menuItem("Fort", tabName = "fort", icon = icon("arrows-alt-h")),
                             menuItem("Point of sale", tabName = "point_of_sale", icon = icon("hand-holding-usd")),
-                            menuItem("Store network", tabName = "store_network", icon = icon("network-wired")),
-                            menuItem("Our apps", tabName = "our_apps", icon = icon("desktop"), badgeLabel = "Updated",
-                                     badgeColor = "blue"),
+                            menuItem("Store network", tabName = "store_network", icon = icon("network-wired"),  badgeLabel = "Ready to use!!",
+                                     badgeColor = "green"),
+                            menuItem("Our apps", tabName = "our_apps", icon = icon("desktop"), badgeLabel = "Ready to use!!",
+                                     badgeColor = "green"),
                             menuItem("more issues!!", tabName = "issues", icon = icon("ad"))
                             
                         )
@@ -2129,24 +2131,39 @@ ui <- dashboardPage(skin = "yellow",
                                         tabsetPanel(type = "tabs",
                                                     tabPanel("Store arrangement",br(),
                                                              "There are 3 placements for the network hardware in a store:",br(),
-                                                             "Under the cashwrap",br(),
+                                                             h3("Under the cashwrap"),br(),
                                                              br(),
                                                              fluidPage(img(src = "NETWORK1.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
-                                                             "In the back room",br(),
+                                                             fluidPage(img(src = "NETWORK5.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             h3("In the back room"),br(),
                                                              br(),
                                                              fluidPage(img(src = "NETWORK2.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
-                                                             "On the ceiling",br(),
+                                                             fluidPage(img(src = "NETWORK4.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             
+                                                             h3("On the ceiling"),br(),
                                                              br(),
                                                              fluidPage(img(src = "NETWORK3.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
                                                              
                                                              "Sometimes the user are not aware of the placement so you can guide them if you ask them to
-                                                             look in any of this 3 places"
+                                                             look in any of this 3 places",br(),
+                                                             br(),
+                                                             "You have to have patience with the users because there are some stores with a rat's nest on their network equipment",br(),
+                                                             "For example:",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "NETWORK6.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             
                                                              
                                                              ),
                                                     tabPanel("Hardware IP's",br(),
@@ -2162,35 +2179,55 @@ ui <- dashboardPage(skin = "yellow",
                                                              br(),
                                                              "Router - Ends with .200",br(),
                                                              br(),
-                                                             "Switch - Ends with .224",br(),
+                                                             "Switch - Ends with .242",br(),
                                                              br(),
                                                              "And so on, we can observe this under store tech support, the name of the hardware is next to the IP"
                                                              
                                                              ),
                                                     
                                                     tabPanel("Router",br(),
-                                                             "FortiGate60D, the router is a small box with the fortinet brand on top",br(),
+                                                             h3("FortiGate60D"),br(),
+                                                             " The router is a small box with the fortinet brand on top",br(),
                                                              br(),
                                                              fluidPage(img(src = "ROUTER1.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
-                                                             fluidPage(img(src = "ROUTER2.png", 
+                                                             fluidPage(img(src = "sts2.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
-                                                             fluidPage(img(src = "sts2.png", #Router image
+                                                             fluidPage(img(src = "ROUTER2.png", #Router image
                                                                            width = 600, align ="left")),br(),
                                                              br(),
                                                              "The router is in charge of routing the Internet service provider connection through the store hardware, it is like a switch 
                                                              but with the router you can set and edit IP addresses",br(),
+                                                             h3("Connections"),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "ROUTER3.png", #Router image
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
                                                              
                                                              ),
                                                     
                                                     tabPanel("Switch",br(),
+                                                             h3("Fortiswitch 124D"),br(),
+                                                             
                                                              "The switch is in charge of routing the instructions that the router sends to the pertinent hardware",br(),
                                                              "It has 24 ports, it can be white or black and it is connected to the router from port 23 & 24 to 6 & 7 on the router",br(),
                                                              "The following are the connections for the switch",br(),
-                                                             
-                                                             
+                                                             br(),
+                                                             fluidPage(img(src = "SWITCH1.png", #Router image
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             br(),
+                                                             fluidPage(img(src = "SWITCH2.png", #Router image
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             h3("Connections"),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "SWITCH3.png", #Router image
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                            
                                                              ),
                                                     tabPanel("ISP Modem",br(),
                                                              "There is 1 main ISP for the stores called comcast but there are more ISP´s for the stores.",br(),
@@ -2201,7 +2238,15 @@ ui <- dashboardPage(skin = "yellow",
                                                              "This is the modem that provides internet connection to the entire store, it goes connected to the Router
                                                              port WAN 1",br(),
                                                              "The only TS we can do for the modem is to power cycle it",br(),
-                                                             "It takes around 5 minutes after the restart for the internet to come back, if it does not you have to try other TS"
+                                                             "It takes around 5 minutes after the restart for the internet to come back, if it does not you have to try other TS",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "MODEM1.png", #Modem
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             br(),
+                                                             fluidPage(img(src = "MODEM2.png", #Modem & router image
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
                                                              
                                                              ),
                                                     
@@ -2238,7 +2283,6 @@ ui <- dashboardPage(skin = "yellow",
                                                                                   fluidPage(img(src = "WAP3.png", 
                                                                                                 width = 600, align ="left")),br(),
                                                                                   br(),
-                                                                                  br(),
                                                                                   fluidPage(img(src = "WAP4.png", 
                                                                                                 width = 600, align ="left")),br(),
                                                                                   br(),
@@ -2249,14 +2293,72 @@ ui <- dashboardPage(skin = "yellow",
                                                              
                                                              ),
                                                     
-                                                    tabPanel("Forti Extender",
+                                                    tabPanel("Patch Panel",br(),
+                                                             "(Only stores with network equipment away from the registers)",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "PPNET.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             "This is the HW that allows the store to have internet conection on all registers",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "PPNET2.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             "The patch panel basically works as an extra long ethernet cable that goes arround the store, as you can see 
+                                                             in the picture above all the blue cables go to the ceiling, and from the ceiling it goes to other parts of the store.",br(),
+                                                             br(),
+                                                             "This types of stores have a second patch panel under the cash wrap so they can match the cables connected on the back room.",br(),
+                                                             "For example:",br(),
+                                                             br(),
+                                                             "If the store has port #1 on the router (the one for R1), connected on the port labeled “X”
+                                                             R1 has to be connected on port “X” on the other patch panel.",br(),
+                                                             br(),
+                                                             "Basically you have to match the patch panel on the back with the one on the front."
                                                              
                                                              ),
                                                     
-                                                    tabPanel("L1 triage",
+                                                    tabPanel("L1 triage (basic TS for all network)",br(),
+                                                             tags$a(href = KB67070, style = "color:green", "KB67070"),"<- L1 triage KB",br(),
+                                                             br(),
                                                              "This is the basic troubleshoot we perform when a store has any kind of network issues.",br(),
-                                                             "To access to this list of stes to follow we have to select the option “Quick code value” "
+                                                             "To access to this list of stes to follow we have to select the option “Quick code value” ",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "TRIAGE1.png", 
+                                                                           width = 400, align ="left")),br(),
+                                                             br(),
+                                                             "Once you select the triage option the following will appear",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "TRIAGE2.png", 
+                                                                           width = 900, align ="left")),br(),
+                                                             br(),
+                                                             "If you follow everything and the issue persists you have to call the NOC team, give them the INC and 
+                                                             warm transfer the call",br(),
+                                                             strong("NOC number:  1-800-859-7821 ID 0152")
                                                              
+                                                             ),
+                                                    tabPanel("How to remote to the actual HW",br(),
+                                                             "Sometimes it is useful to remote to the Router or switch, you can get more information
+                                                             to fix an issue that the user is having",br(),
+                                                             br(),
+                                                             "To remote to the router or switch you have to open the citrix desktop and access to google chrome",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "REMOTE1.png", 
+                                                                           width = 900, align ="left")),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "REMOTE2.png", 
+                                                                           width = 900, align ="left")),br(),
+                                                             br(),
+                                                             h3("Pertinent info you can gather"),
+                                                             h4(strong("Switch")),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "REMOTE3.png", 
+                                                                           width = 900, align ="left")),br(),
+                                                             br(),
+                                                             h4(strong("Router")),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "REMOTE4.png", 
+                                                                           width = 900, align ="left")),br(),
+                                                             br(),
                                                              )
                                                     
                                                     
@@ -2639,7 +2741,14 @@ ui <- dashboardPage(skin = "yellow",
                                                                                                        fluidPage(img(src = "CITDESK6.png", 
                                                                                                                      width = 600, align ="left")),br(),
                                                                                                        br(),
-                                                                                                       
+                                                                                                       h3("TRC remote"),br(),
+                                                                                                       fluidPage(img(src = "citrix3.png", 
+                                                                                                                     width = 500, align ="left")),br(),
+                                                                                                       br(),
+                                                                                                       "The TRC remote tool helps us to access the registers operating system, so we can move the cursor on the
+                                                                                       store computer and TS our way to solve the stores current issue",br(),
+                                                                                                       br(),
+                                                                                                       "Details are on the “Most useful apps” tab"
                                                                                   
                                                                                                        ),
                                                                          tabPanel("Remote to the register files",br(),
