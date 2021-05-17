@@ -2092,8 +2092,66 @@ ui <- dashboardPage(skin = "yellow",
                                           height = 45, width = 50, align ="right"),
                                         h1("Point of sale (POS)"),
                                         tabsetPanel(type = "tab",
-                                                    tabPanel("Re tech"),
-                                                    tabPanel("Back office"),
+                                                    
+                                                    tabPanel("Back office",br(),
+                                                             "Back office is the program where the users are able to perform all actions that have 
+                                                             nothing to do with the sales itself",br(),
+                                                             "The options that the users have are the following",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "trc2.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             strong("F1"), " - label printing: The users are able to print labels with this option
+                                                             they can print price changes, new SKU's and all types of labels. ",br(),
+                                                             br(),
+                                                             strong("F2"), " - Cover art: They can search to print a cover art for a game.",br(),
+                                                             br(),
+                                                             strong("F3"), " - Promotions: They can check promotions with this option.",br(),
+                                                             br(),
+                                                             strong("F4"), " - View journal: The users are able to check previous sales, and current sales, this can be printed
+                                                             and they can find the reference ID to recover a lost DLC.",br(),
+                                                             "For example you can use them for ",tags$a(href = KB67355, style = "color:green", " KB67355"),"to retrieve a lost DLC",br(),
+                                                             br(),
+                                                             strong("F5"), " - POS register: With this option the user is able to open re tech",br(),
+                                                             br(),
+                                                             strong("F6"), " - Live-Email: The user is able to open the e mail with this option",br(),
+                                                             br(),
+                                                             strong("F7"), " - Back office: This is the menu where they can access to human resources and more options, if the user is unable to access it 
+                                                             you can use the SU to access it",br(),
+                                                             br(),
+                                                             strong("F8"), " - Upcoming releases: The users are able to see what are the releases that will come in the future",br(),
+                                                             br(),
+                                                             strong("F9"), " - Close for polling: The users have to close the registers everyday so the store can poll",br(),
+                                                             br(),
+                                                             strong("F10"), " - Item lookup: The user is able to look for item availability in the store or other stores inventory",br(),
+                                                             br(),
+                                                             strong("F11"), " - Reserve list: This option helps the users to check what guests that have reservations",br(),
+                                                             br(),
+                                                             strong("F12"), " - Kronos: This application is for clock in/out and to make schedule planners, and all work force related",br(),
+                                                             br(),
+                                                             strong("Shift + F1"), " - GSO: The users can access to GSO from here and from the menu itself",br(),
+                                                             br(),
+                                                             strong("Shift + F2"), " - WIS: Web in store they can access through the menu as well",br(),
+                                                             br(),
+                                                             strong("Shift + F12"), " - Performance dashboard: The users are able to check their performance from here",br(),
+                                                             br(),
+                                                             strong("Alt + F1"), " - Fixes the resolution of the register",br(),
+                                                             br(),
+                                                             strong("Ctrl + S"), " - You can check teh store information from here"
+                                                             
+                                                             
+                                                             ),
+                                                    
+                                                    
+                                                    tabPanel("Re tech",br(),
+                                                             
+                                                             
+                                                             
+                                                             ),
+                                                    
+                                                    
+                                                    
+                                                    
                                                     tabPanel("Inventory",br(),
                                                              tabsetPanel(type = "tabs",
                                                                          tabPanel("RSB's",
