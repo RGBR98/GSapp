@@ -2143,7 +2143,10 @@ ui <- dashboardPage(skin = "yellow",
                                                              ),
                                                     
                                                     
-                                                    tabPanel("Re tech",br(),
+                                                    tabPanel("Retech",br(),
+                                                             "Retech is the program where the users perform their sales, this can also help us test peripherals and 
+                                                             also perform trades"
+                                                            
                                                              
                                                              
                                                              
