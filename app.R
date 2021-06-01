@@ -1,7 +1,8 @@
 library(shiny)
 library(shinydashboard)
 library(rsconnect)
-
+library(shinyjs)
+library(stringr)
 
 KB75601 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3D3309f9a80fe17a4047c64d8ce1050e08%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3DKB75601%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 KB99874 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3D1247a29adb58ab80878e71fb8c961905%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3DKB99874%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
@@ -42,7 +43,34 @@ gamestop <- tags$img(src = "GSLL.png",
 
 
 
-ui <- dashboardPage(skin = "yellow",
+ui <- 
+
+  fluidPage(
+  tabsetPanel(
+    
+    # > Login -------
+    
+    tabPanel("Login",
+             value = 1,
+             br(),
+             h3("Input your credentials to have access to GS information"),br(),
+             textInput("username", "Username"),
+             passwordInput("password", label = "Password"),
+             actionButton("login", "Login"),
+             br(),
+             br(),
+             
+             
+    ), # closes tabPanel
+    
+    id = "tabselected", type = "tabs"
+    
+  )  # closes tabsetPanel      
+)
+
+  
+  
+  GSGUI <- dashboardPage(skin = "yellow",
                     
                     
                     
@@ -2945,22 +2973,54 @@ ui <- dashboardPage(skin = "yellow",
 
 
 
-server <- function(input, output) {
+#Server
+server <- function(input, output, session){
+  
+  user_vec <- c("5135" = "5135",
+                "213905" = "GSSD",
+                "213906" = "GSSM-1012",
+                "user456" = "password2")
+  
+  observeEvent(input$login, {
     
-    observeEvent(input$firsttabse,#t, 
-                 if(input$firsttabset == "M452DW"){
-                     print("tab \"Printers\" is now being rendered")
-                     output$text <- renderText({"tadaa"})
-                     
-                     
-                 })
+    if (str_to_lower(input$username) %in% names(user_vec)) { # is username in user_vec?
+      
+      if (input$password == unname(user_vec[str_to_lower(input$username)])) {
+        
+        # > Add MainPanel and Sidebar----------
+        shinyjs::show(id = "Sidebar")
+        
+        appendTab(inputId = "tabselected", GSGUI)
+        
+        
+        removeTab(inputId = "tabselected",
+                  target = "1")
+        
+      } else { # username correct, password wrong
+        
+        # specify if needed
+        
+      } # closes if-clause
+      
+    } else { # username name wrong 
+      
+      # specify if needed
+      
+    } # closes second if-clause
     
-    
-    
-    
-    
-}
+  }) # closes observeEvent
+  
+  
+  # observeEvent(input$refresh, {
+  #   shinyjs::js$refresh()
+  # })
+  
+  
+  
+} # Closes server
 
 
+#Needs a server and a ui to work it can contain all code or can be set at the end 
+#for it to work as well
 
-shinyApp(ui, server)
+shinyApp(ui = ui, server = server)
