@@ -2236,12 +2236,22 @@ ui <-
                                                              fluidPage(img(src = "NETWORK4.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
+                                                             "It can also be in a tripplite box with lock, the SL should have it",br(),
+                                                             br(),
+                                                             fluidPage(img(src = "NETWORK7.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
+                                                             fluidPage(img(src = "NETWORK9.png", 
+                                                                           width = 600, align ="left")),br(),
+                                                             br(),
                                                              
                                                              h3("On the ceiling"),br(),
                                                              br(),
                                                              fluidPage(img(src = "NETWORK3.png", 
                                                                            width = 600, align ="left")),br(),
                                                              br(),
+                                                             
+                                                             
                                                              
                                                              "Sometimes the user are not aware of the placement so you can guide them if you ask them to
                                                              look in any of this 3 places",br(),
