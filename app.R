@@ -29,6 +29,8 @@ KB67355  <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3
 KB100220 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3Deebe15efdba8e3c456347dbb8c96195b%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3DNot%20polled%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 #L1 triage
 KB67070 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3D5bb260e32bd86a003a6c35a119da15b0%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Dl1%20triage%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3DGameStop%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
+#C2S
+KB71907 <- "https://iaas.service-now.com/nav_to.do?uri=%2Fkb_view_customer.do%3Fsys_kb_id%3D68fa114f0f003ac0099d1e0be1050e15%26sysparm_language%3D%26sysparm_nameofstack%3D%26sysparm_kb_search_table%3D%26sysparm_tasksearch_company%3D%26sysparm_search%3Dc2s%26sysparm_extcall%3D%26sysparm_extreference%3D%26sysparm_extsubsystem%3D%26sysparm_cms%3D%26sysparm_u_channel%3Dnull%26sysparm_topic%3D%26sysparm_category%3D%26sysparm_search_method%3Dservicenow"
 
 Orders <- "https://source.compucom.com/products/"
 Airwatch <- "https://gamestopadmin.awmdm.com/AirWatch/Login?ReturnUrl=%2FAirWatch%2F"
@@ -82,16 +84,6 @@ ui <-
                                                      message = "Raul.ble@compucom.com",
                                                      icon = icon("glyphicon glyphicon-envelope"),
                                                      href = "mailto:raul.ble@compucom.com"),
-                                                 messageItem(
-                                                     from = "Leads",
-                                                     message = "America.rodriguez@compucom.com",
-                                                     icon = icon("glyphicon glyphicon-envelope"),
-                                                     href = "mailto:America.rodriguez@compucom.com"),
-                                                 messageItem(
-                                                     from = "",
-                                                     message = "other.lead@compucom.com",
-                                                     icon = icon("glyphicon glyphicon-envelope"),
-                                                     href = "mailto:other.lead@compucom.com"),
                                                  icon = icon("envelope")
                                     )
                                     
@@ -105,20 +97,20 @@ ui <-
                             menuItem("Peripherals", tabName = "peripherals", icon = icon("hdd")),
                             menuItem("Database repair", tabName = "widgets", icon = icon("th"), badgeLabel = "Completed",
                                      badgeColor = "green"),
-                            menuItem("Polling", tabName = "polling", icon = icon("cloud")),
+                            menuItem("Polling", tabName = "polling", icon = icon("cloud"), badgeLabel = "Completed",
+                                     badgeColor = "green"),
                             menuItem("Surface", tabName = "surface", icon = icon("microsoft"),  badgeLabel = "Completed",
                                      badgeColor = "green"),
                             menuItem("Surface Service Desk", tabName = "surfacesd", icon = icon("windows"),  badgeLabel = "TS added",
                                      badgeColor = "yellow"),
-                            menuItem("Webpages", tabName = "webpages", icon = icon("globe")),
-                            menuItem("Fort", tabName = "fort", icon = icon("arrows-alt-h"), badgeLabel = "FO & FB Ready to use!!",
-                                     badgeColor = "blue"),
+                            menuItem("Fort", tabName = "fort", icon = icon("arrows-alt-h"), badgeLabel = "Completed",
+                                     badgeColor = "green"),
                             menuItem("Point of sale", tabName = "point_of_sale", icon = icon("hand-holding-usd")),
                             menuItem("Store network", tabName = "store_network", icon = icon("network-wired"),  badgeLabel = "Completed",
                                      badgeColor = "green"),
                             menuItem("Our apps", tabName = "our_apps", icon = icon("desktop"), badgeLabel = "Completed",
-                                     badgeColor = "green"),
-                            menuItem("more issues!!", tabName = "issues", icon = icon("ad"))
+                                     badgeColor = "green")
+                            
                             
                         )
                     ),
@@ -622,12 +614,16 @@ ui <-
                                             tabPanel("Pinpad",br(),
                                                      fluidPage(img(src = "pinpad.png", 
                                                                    height = "40%", width = "60%", align ="left")),br(),
-                                                     tabsetPanel(type = "tabs",
-                                                                 tabPanel("Offline / busy"),
-                                                                 
-                                                                 
-                                                                 tabPanel("Not turning on")
-                                                     )
+                                                     br(),
+                                                     fluidPage(img(src = "pinpad1.png", 
+                                                                   height = "40%", width = "60%", align ="left")),br(),
+                                                     br(),
+                                                     fluidPage(img(src = "pinpad2.png", 
+                                                                   height = "40%", width = "60%", align ="left")),br(),
+                                                     br(),
+                                                     fluidPage(img(src = "pinpad3.png", 
+                                                                   height = "40%", width = "60%", align ="left")),br(),
+                                                     
                                             ),
                                             
                                             
@@ -635,32 +631,82 @@ ui <-
                                             
                                             tabPanel("Scanners",br(),
                                                      tabsetPanel(type = "tabs",
-                                                                 tabPanel("GBT4400",br(),
+                                                                 
+                                                                 tabPanel("DS2278",br(),
+                                                                          fluidPage(img(src = "DS22.png", 
+                                                                                        height = 300, align ="left")),br(),
+                                                                          fluidPage(img(src = "zebrasc1.png", 
+                                                                                        height = 300, align ="left")),br(),
+                                                                          fluidPage(img(src = "zebrasc2.png", 
+                                                                                        height = 300, align ="left"))
+                                                                 ),
+                                                                 
+                                                                 tabPanel("GBT4400/GBT4410",br(),
                                                                           fluidPage(img(src = "GBT4400.png", 
-                                                                                        height = 200, width = 180, align ="left")),br(),
+                                                                                        height = 300, align ="left")),br(),
                                                                           
                                                                  ),
                                                                  
                                                                  
                                                                  
-                                                                 tabPanel("DS2278",br(),
-                                                                          fluidPage(img(src = "DS22.png", 
-                                                                                        height = 200, width = 180, align ="left")),br(),)
+                                                                 
+                                                                 
+                                                                 tabPanel("Gryphon™ I GD44XX (Wired scanner)",br(),
+                                                                          fluidPage(img(src = "scane1.png", 
+                                                                                        height = 300, align ="left")),br(),
+                                                                          fluidPage(img(src = "scane2.png", 
+                                                                                        height = 300, align ="left")),br(),
+                                                                          
+                                                                          )
+                                                                 
                                                      )
+                                                     
+                                                    
                                             ),
                                             
                                             tabPanel("Receipt printer / cashdrawer",br(),
                                                      
                                                      tabsetPanel(type = "tabs",
                                                                  tabPanel("Receipt printer",br(),
-                                                                          fluidPage(img(src = "TM.png", 
-                                                                                        height = 160, width = 180, align ="left")),br(),
+                                                                          tabsetPanel(type = "tabs",
+                                                                          tabPanel("TM-T88I to TM-T88III",br(),
+                                                                                   "From I to III the receipt printers have only a data port to connect to the register",br(),
+                                                                                   "It has to be connected to COM 1 in the register",br(),
+                                                                                   fluidPage(img(src = "TM.png", 
+                                                                                                 height = 300, align ="left")),br(),
+                                                                                   br(),
+                                                                                   fluidPage(img(src = "TM1.png", 
+                                                                                                 height = 300, align ="left")),br(),
+                                                                                   br(),
+                                                                                   fluidPage(img(src = "TM3.png", 
+                                                                                                 height = 300, align ="left")),br(),
+                                                                                   ),
+                                                                          tabPanel("TM-T88IV to TM-T88V",br(),
+                                                                                   "This one does have both a data port and a USB B connection, only one of them has to be connected. 
+                                                                                   If you use the data port it has to be connected on COM 1. If you use USB it has to be in the back of the computer.",br(),
+                                                                                   br(),
+                                                                                   fluidPage(img(src = "TM5.png", 
+                                                                                                 height = 300, align ="left")),br(),
+                                                                                   br(),
+                                                                                   fluidPage(img(src = "TM4.png", 
+                                                                                                 height = 300, align ="left")),br(),
+                                                                                   
+                                                                                   
+                                                                                   )
+                                                                          
+                                                                          
+                                                                          ),br(),
+                                                                          
                                                                           
                                                                  ),
                                                                  
                                                                  tabPanel("Cash drawer",br(),
-                                                                          fluidPage(img(src = "drawer.png", 
-                                                                                        height = 160, width = 250, align ="left")),br(),
+                                                                          fluidPage(img(src = "CW1.png", 
+                                                                                        height = 400, align ="left")),br(),
+                                                                          fluidPage(img(src = "CW2.png", 
+                                                                                        height = 400, align ="left")),br(),
+                                                                          fluidPage(img(src = "CW3.png", 
+                                                                                        height = 400, align ="left")),br(),
                                                                           
                                                                  )
                                                      )
@@ -696,66 +742,96 @@ ui <-
                                             src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
                                             height = 45, width = 50, align ="right"),
                                         h1("Main menu"),
-                                        strong("Welcome!!"),br(),
-                                        br(),
-                                        br(),
-                                        strong("This is a work in progress, some tabs are still not fully functional, I´m updating this daily so more resolutions are added."),br(),
+                                        h3(strong("Welcome!!")),br(),
+                                        "I really hope that this web page helps each and everyone of you, I will no longer update it. Nevertheless if a process starts getting outdated please let me know via Teams and I can eliminate it so it does not create confusion with new co-workers ",br(),
                                         br(),
                                         
                                         fluidRow(
                                             tabBox(width = 14,
-                                                   tabPanel(title = "News",
-                                                            fluidPage(tabsetPanel(
-                                                                tabPanel(title = "Microsoft migration",br(),
-                                                                         "We are migrating to microsoft",br(),
-                                                                         br(),
-                                                                         strong(tags$a(href = "https://aspire.percipio.com/channels/66d5ac53-31f4-4ca7-b57b-c559e1e49152" , 
-                                                                                       "Click here to go to the microsoft 365 training page"))),
-                                                                tabPanel(title = strong("Employee appreciation"),br(),
-                                                                         "FYI, this weekend (starting today, ending Sunday) is our annual Employee Appreciation w/an increase in employee discount. 
-                                                         It was not properly enabled this morning but is now fixed.
-                                                         Stores will need to restart Retech if they are already open for the day. GSO message being posted now:",br(),
-                                                                         br(),
-                                                                         "We're aware that the employee appreciation discount was not working properly this morning. This is now resolved and 
-                                                         should be working as expected at this time. Thanks for your patience as we worked to resolve this temporary issue.",br(),
-                                                                         "Any stores that opened before this was resolved will need to restart ReTech for these changes to take effect",br(),
-                                                                         "he following will need to be done on each register:",br(),
-                                                                         br(),
-                                                                         
-                                                                         "To restart ReTech (the quick method):",br(),
-                                                                         "1.- Press Esc out to the home screen of ReTech (no login screens present)",br(),
-                                                                         "2.- Press Alt+F4 to close the application",br(),
-                                                                         "3.- Press F5 on the Back Office home screen to re-launch ReTech"
-                                                                         
-                                                                )
-                                                            )
-                                                            )
-                                                   ),
-                                                   
-                                                   
-                                                   tabPanel(title = "Master incidents",
-                                                            "Here we can add the active master incidents"),
-                                                   
                                                    
                                                    
                                                    tabPanel(title = "Phone numbers",
-                                                            "This are the phone numbers to transfer:",br(),
-                                                            br(),
-                                                            strong("GameStop IT:"), "817-722-7511 Option 1 (for corporate)",br(),
-                                                            strong("Store dedicated:"), "877-610-7529",br(),
-                                                            strong("NOC team:"), "800-859-7821 ID 0152",br(),
-                                                            strong("HR:"),"(866) 637-4387  (monday through friday)",br(),
-                                                            strong("GV:"), "817-722-7990",br(),
-                                                            strong("GS TV:"), "800-678-4151 Ext. 1",br(),
-                                                            strong("Fusion:"), "888-838-5302 (monday to friday)",br(),
-                                                            strong("8X8:"), "866-496-1403",br(),
-                                                            strong("ComQi Customer Support (8AM - 8PM EST Mondays - Friday) - 866-387-7667"),br(),
                                                             
+                                                            strong(h3("Most used")),br(),
+                                                            strong("GV:"), "817-722-7990",br(),
+                                                            strong("NOC team:"), "800-859-7821 ID 0152",br(),
+                                                            strong("Store dedicated:"), "877-610-7529",br(),
+                                                            strong("HR:"),"(866) 637-4387 (monday through friday)",br(),
+                                                            strong("Our Number:"), "888-435-7860 iaas@service-now.com",br(),
+                                                            strong("ComQi Customer Support:")," (8AM - 8PM EST Mondays - Friday) - 866-387-7667",br(),
+                                                            
+                                                            strong(h3("More phone numbers")),br(),
+                                                            strong("Customer care:"),"(800) 883-8895",br(),
+                                                            strong("Fusion:"),"888-838-5302 (monday to friday)",br(),
+                                                            strong("Loss prevention:"),"The store has the number under the GSO contacts",br(),
+                                                            strong("CC SD:"),"888-557-4129",br(),
+                                                            strong("GS TV:"), "800-678-4151 Ext. 1",br(),
+                                                            strong("8X8 (VOIP SD):"), "866-496-1403",br(),
+                                                            strong("GameStop IT:"), "817-722-7511 Option 1 (for corporate)",br(),
                                                    ),
                                                    
                                                    
+                                                   tabPanel(title = "Helpful tickets",
+                                                            strong("PRB´s (This is a general problem that is like a global ticket number): "),br(),
+                                                            br(),
+                                                            "PRB52131 - Print out end of day win 10 ",br(),
+                                                            "PRB52389 - Fedex password ",br(),
+                                                            "PRB51038 - Pinpad offline",br(),
+                                                            "PRB52482 - OKTA not opening on the surfaces",br(),
+                                                            "PRB52632 - Surface not auto rotating ",br(),
+                                                            br(),
+                                                            strong("Genral tickets:"),br(),
+                                                            "INC34210004 - Email loading message",br(),
+                                                            "INC34268805 - Poll ticket Ready state (LVL 3)",br(),
+                                                            "INC34521111 - LVL 3 canada INC",br(),
+                                                            "INC34592311 - cash drawer win 10",br(),
+                                                            "INC34697595 - Fingerprint scanner ",br(),
+                                                            "INC34714036 - Price change print",br(),
+                                                            "INC34782023 - SKU showing $0.00",br(),
+                                                            "INC34758666 - Firefox not loading ",br(),
+                                                            "INC35426839 - re tech issue (PUR not appearing)",br(),
+                                                            "INC36194393 - Pre order unable to post void ",br(),
+                                                            "INC36831384 - unable to resume WIS",br(),
+                                                            "INC38491008 - Retech source issue",br(),
+                                                            strong(h3("Pseudo KB´s:")),br(),
+                                                            strong("FORT processes:"),br(),
+                                                            "INC38453473 - Fail Over + Failback (Switch and reverse)",br(),
+                                                            "INC34109654 - Fail over ticket",br(),
+                                                            "INC34048168 - Fail back ticket ",br(),
+                                                            "INC39509969 - International FO + FB",br(),
+                                                            br(),
+                                                            strong("Database repair:"),br(),
+                                                            "INC35747753 - All red DB repair",br(),
+                                                            "INC39176483 - trans.mdb repair ",br(),
+                                                            "INC34807959 - Store.INI corrupted",br(),
+                                                            "INC34299929 - Databases corruptions",br(),
+                                                            "INC34907430 - Manual database failure repair ",br(),
+                                                            br(),
+                                                            strong("Pinpad issues:"),br(),
+                                                            "INC37481353 - Pinpad offline",br(),
+                                                            "INC36822646 - Payment is taking longer success",br(),
+                                                            "INC38147201 - Payment is taking longer failure",br(),
+                                                            "INC36123188 - Pinpad Offline AJB not turning on ",br(),
+                                                            br(),
+                                                            strong("Printer issues:"),br(),
+                                                            "INC39545339 - HP1_monoinstall Win X ",br(),
+                                                            "INC38971218 - Win X receipt resolution (Ticket created by Pablo Hernandez)",br(),
+                                                            br(),
+                                                            strong("ICE Machine:"),br(),
+                                                            "INC39423332 - Ice machine 2.5 install",br(),
+                                                            "INC39475199 - Ice controller PS5",br(),
+                                                            "INC37770965 - Ice machine controller error",br(),
+                                                            br(),
+                                                            strong("Surface:"),br(),
+                                                            "INC37664497 - Auto flip not working",br(),
+                                                            "INC38306250 - Dock not recognizing peripherals",br(),
+                                                            ),
                                                    
-                                                   tabPanel(title = (strong("NEW!! Configuration Item")), status = "warning", width = 14, solidHeader = TRUE,
+                                                   
+                                                   
+                                                   
+                                                   
+                                                   tabPanel(title = (strong("Configuration Item")), status = "warning", width = 14, solidHeader = TRUE,
                                                             "GS asked us to change the CI for our created ticket.",br(),
                                                             br(),
                                                             "Now we have to input the configuration item with the store number and register number 
@@ -770,21 +846,15 @@ ui <-
                                 ),
                                 
                                 
-                                tabItem(tabName = "issues",
-                                        img(
-                                            src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
-                                            height = 45, width = 50, align ="right"),
-                                        h1("More issue resolutions to come!!!!!",
-                                           style  = "color:#15942B" ),
-                                        strong("My plan is to add the hardest issue resolutions for our team, so they can access this web page and
-                               with a glipse they can resolve the issue in hand")
-                                ),
+                                
                                 
                                 tabItem(tabName = "polling",
                                         img(
                                             src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
                                             height = 45, width = 50, align ="right"),
                                         h1("Polling"),
+                                        
+                                        br(),
                                         tabsetPanel(type = "tab",
                                                     tabPanel("What is Polling?",br(),
                                                              "GS has a central corporate, this corporate sends a lot of information to all stores, for example",br(),
@@ -804,7 +874,7 @@ ui <-
                                                              
                                                              ),
                                                     tabPanel("R1 not polled",br(),
-                                                             strong(tags$a(href = "KB100220", style = "color:green", "KB100220")), "<- This KB is the one for a not polled register in case this tab does not work",br(),
+                                                             strong(tags$a(href = KB100220, style = "color:green", "KB100220")), "<- This KB is the one for a not polled register in case this tab does not work",br(),
                                                              br(),
                                                              "The polling application is quite simple, it just checks if there is an extra file on the C:\\poll\\send folder",br(),
                                                              "If there is an extra file on that folder the program will appear as not polled and if there are no extra files, it will say polled",br(),
@@ -830,7 +900,40 @@ ui <-
                                                              
                                                             
                                                              ),
-                                                    tabPanel("Promotions not showing"))
+                                                    tabPanel("Promotions not showing",br(),
+                                                             strong(tags$a(href = KB71907, style = "color:green", "KB71907")),"<- C2S file transfer KB ",br(),
+                                                             br(),
+                                                             
+                                                                      "When a promotion is not working that means that the C2S files were not imported correctly, so we have to manually import the files",br(),
+                                                             br(),
+                                                                      "1.- On your Citrix desktop, go to the tools shortcut, open Devtools - Help Desk Approved tools - Reset security (Global)",
+                                                                      "open the program and input the number of your store - Example: if your store is store USA05555, input 5555, on the following messages just press
+                                                                                  ok on both messages",br(),
+                                                                      br(),
+                                                                      "2.- Remote to R1 file explorer and access to c:\\poll\\receive, leave this window open while you perform step 3.",br(),
+                                                                      br(),
+                                                                      "3.- Go to the tools shortcut, open Devtools - Go to POSDown Archives - archives - You should now see a list of folders named by date in YYYYMMDD format 
+                                                                                  (Ex: 20201220 = 20th Dic. 2020.) Sort by Date Modified so the newest is at the top, and select the day BEFORE the current date you’re needing to drop the files on",br(),
+                                                                      "Ex - If we are installing on the 4th of january of 2021 you have to open the file 20210103",br(),
+                                                                      "Now you should see a list of numbers, this are store numbers so if you are installing store 5555 you must select the 5555 folder,
+                                                                                  enter to the folder and copy it's files to the folder you opened on step 2 c:\\poll\\receive",br(),
+                                                                      br(),
+                                                                      "4.- We have to do the same process fo the actual day of the installation, so for the previous example we would have to open the 20210104
+                                                                                  copy it's files to the c:\\poll\\receive your folder should be like the following:",br(),
+                                                                      br(),
+                                                                      fluidPage(img(src = "SF35.png", #imagen de C2S files con el c:\poll\receive
+                                                                                    width = "800", align ="left")),br(),
+                                                                      br(),
+                                                                      "5.- Now that we have the C2S files and we performed the security reset we can now make a “Force Poll” ",br(),
+                                                                      "Now open Restricted Utilities - go to the remotelink option (#1) - and select the force poll option, leave the computer make all it's processes and wait 
+                                                                                  until the computer closes all the programs",br(),
+                                                                      br(),
+                                                                      
+                                                                      
+                                                                      "6.- Restart the R1 (when all the processes have finished)",br(),
+                                                             br(),
+                                                                      "7.- Check c:\\poll\\receive - if there are 2 folders ,back up and rejected, you can go ahead and boot the computer up"
+                                                             ))
                                 ),
                                 
                                 
@@ -2090,17 +2193,7 @@ ui <-
                                 
                                 
                                 
-                                tabItem(tabName = "webpages",
-                                        img(
-                                            src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg", 
-                                            height = 45, width = 50, align ="right"),
-                                        h1("Web pages"),
-                                        tabsetPanel(type = "tab",
-                                                    tabPanel("Storenet"),
-                                                    tabPanel("WIS"),
-                                                    tabPanel("Fedex"))
-                                        
-                                ),
+                                
                                 
                                 tabItem(tabName = "fort",
                                         img(
@@ -2129,44 +2222,26 @@ ui <-
                                                     tabPanel("Fail over",br(),
                                                              tabsetPanel(type = "tabs",
                                                                          tabPanel("What is it & When does it apply?",br(),
-                                                                                  strong("What is it"),br(),
+                                                                                  strong("What is it?"),br(),
                                                                                   "The Fail Over process is basically the counterpart of the Fail Back",br(),
                                                                                   "It makes R2 an emergency register so the store can actually continue with their sales ",br(),
                                                                                   br(),
-                                                                                  strong("When does it apply"),br(),
+                                                                                  strong("When does it apply?"),br(),
                                                                                   "It applies when R1 dies and we need to make R2 an ER1"
                                                                          ),
                                                                          
                                                                          tabPanel("Checks before starting",br(),
                                                                                   h2("Obligatory checks before performing the FO", style ="color:red"),br(),
-                                                                                  strong("1.- ONLY R1 & R2 have to be on",br(),
+                                                                                  strong("1.- Only R2 has to be on since R1 is not operational",br(),
                                                                                          br(),
-                                                                                         "2.- Both registers have to be on the property of gamestop black screen (All POS apps closed)",br(),
+                                                                                         "2.- R2 has to be on the property of gamestop black screen (All POS apps closed)",br(),
                                                                                          br(),
-                                                                                         "3.- R1 has to be a real R1 not an ER1 (you can check that in c:\\bak - if there is a file called
-                                                                                         emergency.flg that means that the register is an emergency register)",br(),
+                                                                                         "3.- R2 has to be a real R2 not an ER1 (you can check that in c:\\bak - if there is a file called
+                                                                                         emergenc.flg that means that the register is an emergency register)",br(),
                                                                                          br(),
                                                                                          "4.- The store has an stable internet connection - in case it does not please perform a L1 triage"),
                                                                                   ),
-                                                                         tabPanel("E-mail back up",br(),
-                                                                                  "The first step is to back up the e mails of the store.",br(),
-                                                                                  "1.- Access to the file explorer of R1.",br(),
-                                                                                  "To make this you have to open the citrix desktop and access to a file explorer",br(),
-                                                                                  br(),
-                                                                                  fluidPage(img(src = "SF20.png", 
-                                                                                                width = "800", align ="left")),br(),
-                                                                                  br(),
-                                                                                  "Once you entered the store the file explorer will ask for a password, you must use", strong("user:possvrsvc - PW:p0$$vr$vc"),br(),
-                                                                                  br(),
-                                                                                  fluidPage(img(src = "SF21.png", 
-                                                                                                width = "500", align ="left")),br(),
-                                                                                  br(),
-                                                                                  "Select the C drive and go to c:\\pos\\mail - There right click the inbox folder, select cut and paste it on your citrix desktop,
-                                                                                  We will save this e mails for the last part of our installation.",br(),
-                                                                                  br(),
-                                                                                  fluidPage(img(src = "SF22.png", 
-                                                                                                width = "400", align ="left")),br(),
-                                                                                  ),
+                                                                         
                                                                          
                                                                          
                                                                          tabPanel("FORT access",br(),
@@ -2236,15 +2311,7 @@ ui <-
                                                                                   
                                                                                   ),
                                                                          
-                                                                         tabPanel("E-mail return",br(),
-                                                                                  "1.- On your citrix desktop open a file explorer and remote to R1 with \\\\usa0XXX-1, access to the C drive POS\\Mail
-                                                                                  cut the Inbox folder that is on the desktop (the one we cut before the Fail Over), and paste it on c:\\POS\\mail, replace the 
-                                                                                  inbox folder that is already there with yours",br(),
-                                                                                  br(),
-                                                                                  fluidPage(img(src = "SF34.png", 
-                                                                                                width = "600", align ="left")),br(),
-                                                                                  br(),
-                                                                                  ),
+                                                                         
                                                                          
                                                                          tabPanel("AJBwaneps activation",br(),
                                                                                  
@@ -2281,8 +2348,8 @@ ui <-
                                                                         
                                                                          
                                                                          tabPanel("Force poll",br(),
-                                                                                  "1.- On your Citrix desktop, go to the tools shortcut, open Devtools - Help Desk Approved tools - Reset security (Global)",
-                                                                                  "open the program and input the number of your store - Example: if your store is store USA05555, input 5555, on the following messages just press
+                                                                                  "1.- On your Citrix desktop, go to the tools shortcut, open Devtools - Help Desk Approved tools - Reset security (Global), or in the search bar look for \\\\gvfile1\\IS\\HelpDesk\\Tools\\DEVTools\\Help Desk Approved Tools",
+                                                                                  ",open the program and input the number of your store - Example: if your store is store USA05555, input 5555, on the following messages just press
                                                                                   ok on both messages",br(),
                                                                                   br(),
                                                                                   "2.- Remote to R1 file explorer and access to c:\\poll\\receive, leave this window open while you perform step 3.",br(),
@@ -2374,7 +2441,7 @@ ui <-
                                                                                   )
                                                                          
                                                                          
-                                                                         ),
+                                                             ),
                                                             
                                                              ),
                                                     
@@ -2382,25 +2449,26 @@ ui <-
                                                              tabsetPanel(type = "tabs",
                                                                          
                                                                          tabPanel("What is it & When does it apply?",br(),
-                                                                                  strong("What is it"),br(),
+                                                                                  strong("What is it?"),br(),
                                                                                   "The Fail Back process is basically the counterpart of the Fail over",br(),
                                                                                   "It transfer all the information from the ER1 to the actual R1",br(),
                                                                                   br(),
-                                                                                  strong("When does it apply"),br(),
-                                                                                  "It applies when there is already a Fail Over process previously applied so we can return the info to R1"
+                                                                                  strong("When does it apply?"),br(),
+                                                                                  "It applies when there is already a Fail Over process previously applied so we can return the info to R1",
+                                                                                  
                                                                                   ),
                                                                          
                                                                          tabPanel("Checks before starting",br(),
                                                                                   h2("Obligatory checks before performing the FB", style ="color:red"),br(),
                                                                                   strong("1.- Only ER1 should be on.",br(),
                                                                                          br(),
-                                                                                         "2.- R2 should be on ER1, check this in c:\\bak - if there is a file called emergncy.flg that means that the register is in emergency mode.",br(),
+                                                                                         "2.- R2 should be on ER1, check this in c:\\bak - if there is a file called emergenc.flg that means that the register is in emergency mode.",br(),
                                                                                          br(),
                                                                                          "3.- Only ER1 should be on and R1 should not be connected to the power (the user can connect everything else).",br(),
                                                                                          br(),
                                                                                          "4.- The store has an stable internet connection - in case it does not please perform a L1 triage."
                                                                                          )
-                                                                                  
+                                                                         
                                                                                   
                                                                                   ),
                                                                          
@@ -2464,9 +2532,9 @@ ui <-
                                                                                   "1.- Open Restricted utilities on ER1 and select the Fail Over Recovery Tool, the message",strong(" “Change Primary to Secondary” "),"will appear,
                                                                                   click YES and ER1 will shut down,",strong( "it will stay off"),", the computer will change the IP address to .12",br(),
                                                                                   br(),
-                                                                                  "2.- Tell the user to install R1, but do not plug the power cable.",br(),
+                                                                                  "2.- Tell the user to finish the install of R1.",br(),
                                                                                   br(),
-                                                                                  "3.- When the user finishes R1 install tell him to connect the power cable and turn it on and start with the Fail back",br(),
+                                                                                  "3.- When the user finishes R1 installation tell him to connect the power cable and turn it on so you can start with the Fail back",br(),
                                                                          
                                                                          
                                                                          ),
@@ -2475,7 +2543,7 @@ ui <-
                                                                                   "1.- Close all the programs that are open on the register, normally the program open is back office, to close this 
                                                                                   open restricted utilities and then open the task manager and end the POS, R1 should be on the black screen, property of GameStop.",br(),
                                                                                   br(),
-                                                                                  "2.- Turn R2 on and let it boot all the way up (this has to be R2 and not ER1 because the EMR1 to R2 step has been performed), normally it loads to the IPOS monitor, now end the IPOS monitor with task manager.",br(), 
+                                                                                  "2.- Turn R2 on and let it boot all the way up [It will boot only to the black screen “Property of gamestop”] (this has to be R2 and not ER1 because the ER1 to R2 step has been performed).",br(), 
                                                                                   "If it does not please end al tasks on R2 until it is on a black screen property of gamestop",br(),
                                                                                   br(),
                                                                                   "3.- On", strong("R2"), "open Restricted utilities and select the Fail Over Recovery Tool option, you will get the message
@@ -2654,7 +2722,326 @@ ui <-
                                                                                   "R1 is a slow register.",br(),
                                                                                   "R1 is buggy and has a lot of issues.",br(),
                                                                                   "R1 is being replaced as part of a windows update",br(),
-                                                                                  )
+                                                                                  br(),
+                                                                                  "When the user receives the new R1 you can perform this process, do not do a fail over unless the new R1 is in the store or R1 is completely unusable"
+                                                                                  ),
+                                                                         
+                                                                         tabPanel("E-mail back up",br(),
+                                                                                  
+                                                                                  "1.- Access to the file explorer of R1.",br(),
+                                                                                  "To make this you have to open the citrix desktop and access to a file explorer",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF20.png", 
+                                                                                                width = "800", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "Once you entered the store the file explorer will ask for a password, you must use", strong("user:possvrsvc - PW:p0$$vr$vc"),br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF21.png", 
+                                                                                                width = "500", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "Select the C drive and go to \\pos\\mail - There right click the inbox folder, select cut and paste it on your citrix desktop,
+                                                                                  We will save this e mails for the last part of our installation",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF22.png", 
+                                                                                                width = "400", align ="left")),br(),
+                                                                                  br(),
+                                                                                  
+                                                                         ),
+                                                                         tabPanel("Fail Over PT.1",br(),
+                                                                                  
+                                                                                  "Access to RU",br(),
+                                                                                  fluidPage(img(src = "SF49.png", 
+                                                                                                width = "400", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "1.- on store tech support make sure that all the registers except R1 & R2 are off, this can be done with the pinger (STS tab),
+                                                                                  If only R1 & R2 are pinging you can continue with step 2",br(),
+                                                                                  br(),
+                                                                                  "All auxilliary registers should be as follows:",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF23.png", 
+                                                                                                width = "400", align ="left")),br(),
+                                                                                  br(),
+                                                                                  strong("Only R1 and R2 must ping."),br(),
+                                                                                  br(),
+                                                                                  "2.- Now that all the aux registers are off we will remote to R1 and R2, the best way to remote is to have both of them open at the same time
+                                                                                  because we will need to do a lot of processes on both, exemplefied on the image below",br(),
+                                                                                  "To remote to the registers we will use an application called TRC remote (located on the right side of your remote desktop [Yellow square on the image])",br(),
+                                                                                  "To access to the registers we have to input the IP of the register that we need to access, and use -", strong("username: storeuser - PW: storeuser"),
+                                                                                  "if that does not let you you can try -",strong(" username: possvrsvc - PW: p0$$vr$vc"),br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF25.png", 
+                                                                                                width = "700", align ="left")),br(),
+                                                                                  fluidPage(img(src = "SF26.png", 
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  fluidPage(img(src = "SF24.png", 
+                                                                                                width = "1000", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "3.- Once you are on the registers open RU on both of them",br(),
+                                                                                  "To open RU inyect ctrl + escape with the inyect function  (Green square) and open Restricted utilities (To know how to access 
+                                                                                  you can go to the tab [Access to RU])",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF27.png", 
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "Now input the password from password generator so you can access to RU",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF28.png", 
+                                                                                                width = "800", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "Your desktop should look similar to this:",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF29.png", 
+                                                                                                width = "800", align ="left")),br(),
+                                                                                  br(),
+                                                                                  
+                                                                         ),
+                                                                         
+                                                                         tabPanel("Fail over PT.2",br(),
+                                                                                  "4.- Close all the programs and processes that you can see on the computer, on this example we have to close GOV.EXE on R1 and
+                                                                                  close Monitor.exe on R2",br(),
+                                                                                  "To close them we have to open the task manager processes tab (On RU go to option utilities #2), and select task manager)",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF30.png", 
+                                                                                                width = "400", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "5.- Now that we are on a black screen on both registers we have to select on R1 RU (option tools #5) and select run DB backup,
+                                                                                  then wait 10 seconds and go to R2, select Display BAK_1.zip file info, if the date is correct you can continue to step 6 ",
+                                                                                  strong("if it is not contact any mentor so we can help you"),br(),
+                                                                                  fluidPage(img(src = "SF31.png", 
+                                                                                                width = "400", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "6.- If the date is correct, turn off R1 & tell the technician to Start with the installation of the surface R1 
+                                                                                  (Connect everything except the power cord)",br(),
+                                                                                  br(),
+                                                                                  
+                                                                                  "7.- On R2 select the Fail Over recovery tool option (Located on tools #5), and select",strong("yes"),"on the pop up 
+                                                                                  “Are you sure you want to launch the Fail Over Recovery Tool”",br(),
+                                                                                  "Now the following window should appear",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF32.png", 
+                                                                                                width = "500", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "As you can see only the R2 square is blue, that means that only R2 is on, if there is another square open, please tell the tech to turn
+                                                                                  off the register on question",br(),
+                                                                                  br(),
+                                                                                  "8.- Now click on the fail over button the message “Fail over to secondary” should appear, click", strong("yes"),"and the fail over will begin",br(),
+                                                                                  strong("Note: You may have an error called Remote registry error, to fix that error you have to go to the tab called “Remote Registry” "),br(),
+                                                                                  br(),
+                                                                                  "9.- After you clicked yes on the fail over message the message “Verify backup file”, will appear", strong("Please check the date of the file"),"
+                                                                                  if the file date is the same as the DBbackup we performed earlier click YES, if it is not correct",strong("Contact a mentor"),br(),
+                                                                                  br(),
+                                                                                  "10.- Then another message called “Verify missing Backup File” will appear",br(),
+                                                                                  "As long as there is not any file with the extension", strong(".MDB"), "you can continue, if there is a file with an .MDB extension",strong("Please contact a mentor"),br(),
+                                                                                  "After we clicked on YES, R2 will change it's name to R1 and the IP address will change to .11",br(),
+                                                                                  br(),
+                                                                                  "11.- R2 now is called Emergency R1 (ER1), we have to remote to ER1 with the IP address of R1",br(),
+                                                                                  br(),
+                                                                                  "12.- The message “Fail over complete” will appear, select OK on the message and ER1 will restart",br(),
+                                                                                  br(),
+                                                                                  "13.- After the restart remote to ER1, it shoould load all the way to the POS (back office and the menu), close back office (ctrl + shift + z - F5)
+                                                                                  the computer should be on a black screeen, property of gamestop should be on the background",br(),
+                                                                                  br(),
+                                                                                  "14.- The Fail Over is completed.",br(),
+                                                                                  br(),
+                                                                                  "15.- Tell the user to install all R1 except the power cord"
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                         ),
+                                                                         
+                                                                         tabPanel("ER1 to R2",br(),
+                                                                                  strong("Disclaimer: "),"Emergency Register 1 (ER1), this is R2 with the IP of R1, we have to change it back to the original IP.",br(),
+                                                                                  br(),
+                                                                                  strong("You have to do this step after the FO, R2 will remain off while the user is installing R1"),br(),
+                                                                                  br(),
+                                                                                  "On Emergency Register 1 (Register 2):",br(),
+                                                                                  br(),
+                                                                                  "1.- Open Restricted utilities on ER1 and select the Fail Over Recovery Tool, the message",strong(" “Change Primary to Secondary” "),"will appear,
+                                                                                  click YES and ER1 will shut down,",strong( "it will stay off"),", the computer will change the IP address to .12",br(),
+                                                                                  br(),
+                                                                                  "2.- When the user finishes R1 tell him to turn it on and continue with R1 verifications tab",br(),
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                         ),
+                                                                         tabPanel("Fail back",br(),
+                                                                                  "1.- Close all the programs that are open on the register, normally the program open is back office, to close this 
+                                                                                  open restricted utilities and then open the task manager and end the POS, R1 should be on the black screen, property of GameStop.",br(),
+                                                                                  br(),
+                                                                                  "2.- Turn R2 on and let it boot all the way up [It will boot only to the black screen “Property of gamestop”] (this has to be R2 and not ER1 because the ER1 to R2 step has been performed).",br(), 
+                                                                                  "If it does not please end al tasks on R2 until it is on a black screen property of gamestop",br(),
+                                                                                  br(),
+                                                                                  "3.- On", strong("R2"), "open Restricted utilities and select the Fail Over Recovery Tool option, you will get the message
+                                                                                  “Ready for Fail back”, and the following window",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF33.png", 
+                                                                                                width = "400", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "Click OK on the message",br(),
+                                                                                  strong("NOTE:Only an unknown register and R1 (ER1) should appear on that screen, if something else appears please contact LVL 2 or a LEAD"),br(),
+                                                                                  br(),
+                                                                                  "4.- Click on the Fail Back button, if you get the remote registry error go to the tab “remote registry” if you don't, go 
+                                                                                  to step 5",br(),
+                                                                                  br(),
+                                                                                  "5.- You will get the message “File Not copied”, click YES on the message only if you don't get an", strong(".MDB"),"file, if you see an .MDB file",
+                                                                                  strong("Contact LVL 2 or a Lead"),br(),
+                                                                                  br(),
+                                                                                  "6.- After that you will get a message “Fail Back Complete”, click OK, R1 will restart automatically, When R1 loads all the way to 
+                                                                                  the POS R2 should restart, if it does not restart automatically just exit the Fail Over Recovery Tooland restart the computer manually",br(),
+                                                                                  br(),
+                                                                                  "7.- On R1 the register will be on back office, you have to close it with (ctrl + shift + z), R1 should be completely on a black screen"
+                                                                         ),
+                                                                         
+                                                                         tabPanel("E-mail return",br(),
+                                                                                  "1.- On your citrix desktop open a file explorer and remote to R1 with \\\\usa0XXX-1, access to the C drive POS\\Mail
+                                                                                  cut the Inbox folder that is on the desktop (the one we cut before the Fail Over), and paste it on c:\\POS\\mail, replace the 
+                                                                                  inbox folder that is already there with yours",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF34.png", 
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  
+                                                                         ),
+                                                                         
+                                                                         tabPanel("AJBwaneps activation ",br(),
+                                                                                  h3(strong("You must perform this steps on R1 & R2")),
+                                                                                  "1.- Open the new restricted utilities (ERU), you can do this with a command prompt - input - elevaterestrictedutilities.exe",br(),
+                                                                                  "The following will appear:",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF47.png", 
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "2.- Select device manager, and the following pop up will appear",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF46.png", 
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  br(),
+                                                                                  strong("TIP: the window may appear on the right, you can move it to the left so you can see the selection arrow"),br(),
+                                                                                  br(),
+                                                                                  "3.- Click the arrow key and select automatic, then select start services",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF48.png", 
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "4.- open again the admin command prompt - input", strong("cd.."),
+                                                                                  "and then <enter>, Now you should be on the c:\\ directory on the command prompt. (If we are not input cd.. until we 
+                                                                                                                                                 are on the c:\\ folder)",br(),
+                                                                                  br(),
+                                                                                  "5.-  input - ",strong("schtasks.exe /Run /TN AJBConfigManager"), "and press <Enter>, you should get a message of SUCCESS
+                                                                                                                                                 if not check the syntaxis maybe something is misspelled",br(),
+                                                                                  br(),
+                                                                                  "6.- Input - ", strong("net stop AJBwaneps "), " - wait 10 seconds", strong("net start AJBwaneps"),"wait 10 seconds",br(),
+                                                                                  br(),
+                                                                                  "7.- You can now do the force poll"
+                                                                         ),
+                                                                         
+                                                                         
+                                                                         
+                                                                         tabPanel("Force poll",br(),
+                                                                                  "1.- On your Citrix desktop, go to the tools shortcut, open Devtools - Help Desk Approved tools - Reset security (Global)",
+                                                                                  "open the program and input the number of your store - Example: if your store is store USA05555, input 5555, on the following messages just press
+                                                                                  ok on both messages",br(),
+                                                                                  br(),
+                                                                                  "2.- Remote to R1 file explorer and access to c:\\poll\\receive, leave this window open while you perform step 3.",br(),
+                                                                                  br(),
+                                                                                  "3.- Go to the tools shortcut, open Devtools - Go to POSDown Archives - archives - You should now see a list of folders named by date in YYYYMMDD format 
+                                                                                  (Ex: 20201220 = 20th Dic. 2020.) Sort by Date Modified so the newest is at the top, and select the day BEFORE the current date you’re needing to drop the files on",br(),
+                                                                                  "Ex - If we are installing on the 4th of january of 2021 you have to open the file 20210103",br(),
+                                                                                  "Now you should see a list of numbers, this are store numbers so if you are installing store 5555 you must select the 5555 folder,
+                                                                                  enter to the folder and copy it's files to the folder you opened on step 2 c:\\poll\\receive",br(),
+                                                                                  br(),
+                                                                                  "4.- We have to do the same process fo the actual day of the installation, so for the previous example we would have to open the 20210104
+                                                                                  copy it's files to the c:\\poll\\receive your folder should be like the following:",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF35.png", #imagen de C2S files con el c:\poll\receive
+                                                                                                width = "800", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "5.- Now that we have the C2S files and we performed the security reset we can now make a “Force Poll” ",br(),
+                                                                                  "Now open Restricted Utilities - go to the remotelink option (#1) - and select the force poll option, leave the computer make all it's processes and wait 
+                                                                                  until the computer closes all the programs",br(),
+                                                                                  br(),
+                                                                                  "6.- On restricted utilities go to option (utilities #2), access to the printers folder and select the printer driver as default (It can be either 
+                                                                                  HP1_Mono (if the printer is connected via Wi-Fi or ethernet), or it can be the name of the printer(if it is connected via USB)",br(),
+                                                                                  br(),
+                                                                                  "7.- Restart the R1 (when all the processes have finished) and now we can go to the Peripherals checkup step"
+                                                                         ),
+                                                                         
+                                                                         tabPanel("Peripheral checkup",br(),
+                                                                                  "This check up is performed with the employee of the store, tell the tech that you need the employee so he can put him on the line.",br(),
+                                                                                  br(),
+                                                                                  "1.- After the restart both registers should boot all the way to the POS (Back office), you should have the following open.",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "SF36.png", #imagen de back office sin re tech
+                                                                                                width = "600", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "2.- Tell the employee to open the register as normal, he will press F5 to open re tech and input the amount of money for the opening.",br(),
+                                                                                  "If it does not open try TS the problem in hand as normal, if you cannot fix it contact lvl 2 or a LEAD .",br(),
+                                                                                  br(),
+                                                                                  "3.- Tell the employee to open the e-mails and his performance portal (If they open it is working), if the emails or the performance are not opening
+                                                                                                       please try the following.",br(),
+                                                                                  "Open c:\\POS\\Emails\\inbox - cut all the files in that folder and copy them into a new folder created on your citrix desktop",br(),
+                                                                                  "When all the files are now on the new folder cut them again and copy them in the InBox folder of the register (this is an e mail refresh)",br(),
+                                                                                  "If that does not work please contact a LEAD or LVL 2",br(),
+                                                                                  br(),
+                                                                                  "4.- Tell the employee to check the reserves on reservation manager, he will open back office and select the reservation manager option, the reserves
+                                                                                                       should appear on the window pop up (If they do not appear please contact a LEAD or LVL 2)",br(),
+                                                                                  br(),
+                                                                                  "5.- Tell the employee to perform a transaction - here he will have to :",br(),
+                                                                                  "A) Scan something (This tells us if the Scanner works).",br(),
+                                                                                  "B) Check if the promotions are working (This will tell us if the C2S files were imported correctly).",br(),
+                                                                                  "C) Make a card balance (Here we check the pinpad), if it does not work go to the Specific Hardware TS tab.",br(),
+                                                                                  "D) Perform a customer lookup (This tells us if the information was traspassed correctly).",br(),
+                                                                                  "E) Perform a trade (To see if re tech works correctly).",br(),
+                                                                                  br(),
+                                                                                  "6.- Tell the employee to print a label with the label printer (If that does not work TS accordingly with KB´s.)",br(),
+                                                                                  br(),
+                                                                                  "7.- Tell the employee to print a report with the HP printer (If that does not work TS accordingly with KB´s.).",br(),
+                                                                                  br(),
+                                                                                  "8.- Tell the employee to check the counts, he will open back office, open the inventory and the press shift + F12
+                                                                                                       (if it does not open contact a LEAD or LVL 2).",br(),
+                                                                                  br(),
+                                                                                  "9.- Tell the employee to perform a no sale, (If that does not work TS accordingly with KB´s.).",br(),
+                                                                                  br(),
+                                                                                  "Perform the same checks in R2",br(),
+                                                                                  "If everything works you can now tell the user to turn all his auxiliary registers on",
+                                                                                  
+                                                                         ),
+                                                                         
+                                                                         
+                                                                         
+                                                                         tabPanel("Remote Registry (only if necessary)",br(),
+                                                                                  fluidPage(img(src = "RREG1.png", 
+                                                                                                width = "500", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "If you get the remote registry error on the Fail over or the Fail back part you have to follow this steps",br(),
+                                                                                  br(),
+                                                                                  strong("Note: On the fail back we have to do this on R1 & R2"),br(),
+                                                                                  br(),
+                                                                                  "1.- On restricted utilities select option tools (#5), and the open a DOS prompt",br(),
+                                                                                  br(),
+                                                                                  "2.- Input - ",strong("runas /u:possvrsvc cmd - PW:p0$$vr$vc"),"(the password will not type but it is being input)",br(),
+                                                                                  br(),
+                                                                                  "3.- On the new command input service.msc, select remote registry and click enter",br(),
+                                                                                  br(),
+                                                                                  "4.- On startup type select manual -> select apply -> select start",br(),
+                                                                                  br(),
+                                                                                  fluidPage(img(src = "RREG2.png", 
+                                                                                                width = "700", align ="left")),br(),
+                                                                                  br(),
+                                                                                  "5.- Now you can continue with the Fail back, ",strong("if the issue persists you have to perform this steps on the other
+                                                                                   register,")," if the issue persist please contact a mentor"
+                                                                         )
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+                                                                         
+                                                                         
                                                                         )
                                                              
                                                              )
@@ -3535,7 +3922,7 @@ ui <-
 #Server
 server <- function(input, output, session){
   
-  user_vec <- c("5135" = "5135",
+  user_vec <- c("3052" = "3052",
                 "213905" = "GSSD",
                 "213906" = "GSSM-1012",
                 "user456" = "password2",
