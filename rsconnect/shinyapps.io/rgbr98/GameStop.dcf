@@ -5,8 +5,8 @@ account: rgbr98
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3417056
-bundleId: 4663261
+bundleId: 4755751
 url: https://rgbr98.shinyapps.io/GameStop/
-when: 1622528190.3116
+when: 1624623910.34089
 asMultiple: FALSE
 asStatic: FALSE
