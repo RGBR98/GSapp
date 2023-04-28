@@ -2232,14 +2232,16 @@ ui <-
                                                                          
                                                                          tabPanel("Checks before starting",br(),
                                                                                   h2("Obligatory checks before performing the FO", style ="color:red"),br(),
-                                                                                  strong("1.- Only R2 has to be on since R1 is not operational",br(),
+                                                                                  strong("1.- DO NOT RUN DBBACKUP ON REGISTER 2, EVER.",br(),
                                                                                          br(),
-                                                                                         "2.- R2 has to be on the property of gamestop black screen (All POS apps closed)",br(),
+                                                                                        "2.- Only R2 has to be on since R1 is not operational",br(),
                                                                                          br(),
-                                                                                         "3.- R2 has to be a real R2 not an ER1 (you can check that in c:\\bak - if there is a file called
+                                                                                         "3.- R2 has to be on the property of gamestop black screen (All POS apps closed)",br(),
+                                                                                         br(),
+                                                                                         "4.- R2 has to be a real R2 not an ER1 (you can check that in c:\\bak - if there is a file called
                                                                                          emergenc.flg that means that the register is an emergency register)",br(),
                                                                                          br(),
-                                                                                         "4.- The store has an stable internet connection - in case it does not please perform a L1 triage"),
+                                                                                         "5.- The store has an stable internet connection - in case it does not please perform a L1 triage"),
                                                                                   ),
                                                                          
                                                                          
@@ -2460,13 +2462,15 @@ ui <-
                                                                          
                                                                          tabPanel("Checks before starting",br(),
                                                                                   h2("Obligatory checks before performing the FB", style ="color:red"),br(),
-                                                                                  strong("1.- Only ER1 should be on.",br(),
+                                                                                  strong("1.- DO NOT RUN DBBACKUP ON REGISTER 2, EVER.",br(),
                                                                                          br(),
-                                                                                         "2.- R2 should be on ER1, check this in c:\\bak - if there is a file called emergenc.flg that means that the register is in emergency mode.",br(),
+                                                                                         "2.- Only ER1 should be on.",br(),
                                                                                          br(),
-                                                                                         "3.- Only ER1 should be on and R1 should not be connected to the power (the user can connect everything else).",br(),
+                                                                                         "3.- R2 should be on ER1, check this in c:\\bak - if there is a file called emergenc.flg that means that the register is in emergency mode.",br(),
                                                                                          br(),
-                                                                                         "4.- The store has an stable internet connection - in case it does not please perform a L1 triage."
+                                                                                         "4.- Only ER1 should be on and R1 should not be connected to the power (the user can connect everything else).",br(),
+                                                                                         br(),
+                                                                                         "5.- The store has an stable internet connection - in case it does not please perform a L1 triage."
                                                                                          )
                                                                          
                                                                                   
@@ -2810,7 +2814,7 @@ ui <-
                                                                                   fluidPage(img(src = "SF31.png", 
                                                                                                 width = "400", align ="left")),br(),
                                                                                   br(),
-                                                                                  "6.- If the date is correct, turn off R1 & tell the technician to Start with the installation of the surface R1 
+                                                                                  "6.- If the date is correct, turn off R1 & tell the user to Start with the installation of R1 
                                                                                   (Connect everything except the power cord)",br(),
                                                                                   br(),
                                                                                   
@@ -2860,7 +2864,7 @@ ui <-
                                                                                   "1.- Open Restricted utilities on ER1 and select the Fail Over Recovery Tool, the message",strong(" “Change Primary to Secondary” "),"will appear,
                                                                                   click YES and ER1 will shut down,",strong( "it will stay off"),", the computer will change the IP address to .12",br(),
                                                                                   br(),
-                                                                                  "2.- When the user finishes R1 tell him to turn it on and continue with R1 verifications tab",br(),
+                                                                                  "2.- When the user finishes R1 tell him to turn it on and continue with the failback tab",br(),
                                                                                   
                                                                                   
                                                                                   
